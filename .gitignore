@@ -1,10 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/astro,python
-# Edit at https://www.toptal.com/developers/gitignore?templates=astro,python
-
-### Astro ###
-# Gitignore template for Astro projects
-# Ignore content collection generated files
-.astro
+# Created by https://www.toptal.com/developers/gitignore/api/python
+# Edit at https://www.toptal.com/developers/gitignore?templates=python
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -178,4 +173,4 @@ poetry.toml
 # LSP config files
 pyrightconfig.json
 
-# End of https://www.toptal.com/developers/gitignore/api/astro,python
+# End of https://www.toptal.com/developers/gitignore/api/python

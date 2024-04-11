@@ -1,94 +1,55 @@
 # KDX-AWS-Admin-Panel
 
-Welcome to the KDX-AWS-Admin-Panel project! This project is an innovative landing page designed to simplify cloud management tasks for AWS EC2 instances. It serves as a user-friendly interface that enables users to start or stop EC2 instances with ease, and even schedule these tasks for better automation and efficiency. 
+Welcome to the KDX-AWS-Admin-Panel project! This application serves a page designed to simplify cloud management tasks for AWS EC2 instances. It acts as an interface that allows users to start or stop EC2 instances with ease, and even schedule these tasks for better automation and efficiency.
 
-## Project Overview
-
-The KDX-AWS-Admin-Panel is currently under development and embodies a concept aimed at enhancing user interaction with AWS resources. The project leverages a modern tech stack, incorporating Astro for the frontend to ensure a lightning-fast, static site generation, and FastAPI for the backend, offering a high-performance, easy-to-use framework to build APIs with Python.
-
-This project is uniquely tailored for users seeking a straightforward interface to manage EC2 instances without delving into the complexities of AWS management consoles or extensive CLI commands.
+This project is specially designed for users without access to complex systems, who only need a simple interface to manage these instances within their organization.
 
 ### Features
 
 - **EC2 Instance Management**: Start or stop your EC2 instances directly from the web interface.
 - **Scheduling**: Plan your instances to start or stop at specific times, optimizing resource usage and reducing costs.
-- **Notifications**: (Upcoming) Receive updates on your EC2 instances' status through Telegram notifications.
+- **Notifications**: (Coming Soon) Receive updates on the status of your EC2 instances through Telegram notifications.
 
-### Key Technologies
+### Technologies
 
-- **Frontend**: [Astro](https://astro.build/)
-- **Backend**: [FastAPI](https://fastapi.tiangolo.com/)
-- **AWS SDK**: [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) for AWS interaction
-- **Notifications**: (Planned) [python-telegram-bot](https://python-telegram-bot.org/) for sending alerts and updates
+- **Frontend**: HTMX for dynamic interactivity without needing to reload the page.
+- **Backend**: [FastAPI](https://fastapi.tiangolo.com/) for API creation with Python, offering a high-performance solution for the backend.
+- **AWS SDK**: [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) for AWS interaction, allowing direct management of AWS services from the application.
+- **Notifications**: (Planned) [python-telegram-bot](https://python-telegram-bot.org/) for sending alerts and updates.
 
-## Getting Started
-
-To get started with the KDX-AWS-Admin-Panel, clone this repository and ensure you have the prerequisites installed on your system.
-
-### Prerequisites
-
-- Python 3.8 or later
-- Node.js and npm (for Astro frontend)
+```
+.
+├── app.py
+├── static
+│   ├── css
+│   │   └── tailwind.min.css
+│   └── js
+│       └── htmx.js
+└── templates
+    └── index.html
+```
 
 ### Environment Setup
 
-The project requires setting up several environment variables to handle AWS authentication and database connectivity securely. Please create a `.env` file in the project root with the following variables:
+Configure several environment variables to handle AWS authentication securely. Create a `.env` file at the root of the project as follows:
 
-```dotenv
-AWS-CONNECTION-STRING=your_aws_token_here
-DDBB_USER=your_database_user
-DDBB_PASS=your_database_password
-DDBB_HOST=your_database_host
-DDBB_NAME=your_database_name
+```
+AWS_ACCESS_KEY_ID=your_aws_access_key_id
+AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key
+AWS_DEFAULT_REGION=your_aws_region
 ```
 
-**Note**: Replace `your_aws_token_here` and the database credentials with your actual AWS connection string and database details.
+**Note**: Replace the values with your own AWS credentials, which must have the minimum permissions necessary to start, stop, and query the EC2 instances you need to modify.
 
-### Installation
-
-1. **Backend Setup**:
-
-   Navigate to the backend directory and install the required Python dependencies.
-
-   ```bash
-   cd backend
-   pip install -r requirements.txt
-   ```
-
-2. **Frontend Setup**:
-
-   Navigate to the frontend directory and install the necessary npm packages.
-
-   ```bash
-   cd ../frontend
-   npm install
-   ```
-
-### Running the Application
-
-To launch the KDX-AWS-Admin-Panel, you need to start both the frontend and backend servers.
-
-- **Start the Backend**:
-
-  ```bash
-  uvicorn main:app --reload
-  ```
-
-- **Start the Frontend**:
-
-  ```bash
-  npm start
-  ```
-
-Now, navigate to `http://localhost:3000` in your browser to access the KDX-AWS-Admin-Panel landing page.
+## TODO:
+[ ] JSON for the AWS user
+[ ] Implement python-telegram-bot
+[ ] Implement HTMX for frontend interactivity
 
 ## Contributing
 
-The KDX-AWS-Admin-Panel is an open project, and contributions are welcome. If you're interested in improving the project or adding new features, please feel free to fork the repository, make your changes, and submit a pull request.
+The KDX-AWS-Admin-Panel is an open project, and contributions are welcome.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
